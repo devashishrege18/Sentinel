@@ -170,6 +170,36 @@ timestamped `.txt` file under a local `reports/` folder.
 
 ---
 
+## Screenshots (CLI Output)
+
+**Port Scanner**
+```text
+Choose an option: 1
+Target host (e.g. localhost): localhost
+Start port: 1
+End port: 1024
+Scanning localhost ports 1-1024 ...
+PortScanResult{host='localhost', port=135, status=OPEN, latencyMillis=2}
+PortScanResult{host='localhost', port=445, status=OPEN, latencyMillis=2}
+Scan complete in 41 ms. Open ports found: 2
+Results saved to database.
+```
+
+**Password Auditor**
+```text
+Choose an option: 4
+Password to audit (not stored in plaintext anywhere): myWeakPass!
+
+Strength: WEAK (2/4 checks passed)
+  [FAIL] Minimum Length - Too short: 11 characters (minimum 12)
+  [FAIL] Character Complexity - Only uses 2 character classes (need at least 3)
+  [PASS] Common Password Check - Not found in the common password list
+  [PASS] Sequential/Repeated Pattern Check - No obvious sequential or repeated patterns found
+Audit summary saved to database (password itself is never stored).
+```
+
+---
+
 ## 6. Project structure
 
 ```
